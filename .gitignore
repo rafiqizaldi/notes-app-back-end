@@ -5,6 +5,7 @@ node_modules/
 *.pem
 .env
 .env.*
+.prod.env
 !.env.example
 
 # Log & file sistem operasi
