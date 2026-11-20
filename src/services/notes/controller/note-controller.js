@@ -30,7 +30,7 @@ export const getNoteById = async (req, res, next) => {
     return next(new NotFoundError("Catatan tidak ditemukan"));
   }
 
-  return response(res, 200, "Catatan sukses ditampilkan", note);
+  return response(res, 200, "Catatan sukses ditampilkan", { note });
 };
 
 export const editNoteById = async (req, res, next) => {

@@ -26,11 +26,11 @@ export const up = (pgm) => {
       type: "TEXT[]",
       notNull: true,
     },
-    created_at: {
+    createdAt: {
       type: "TEXT",
       notNull: true,
     },
-    updated_at: {
+    updatedAt: {
       type: "TEXT",
       notNull: true,
     },

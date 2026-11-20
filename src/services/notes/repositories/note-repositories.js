@@ -9,7 +9,7 @@ class NoteRepositories {
     const createdAt = new Date().toISOString();
     const updatedAt = createdAt;
     const query = {
-      text: "INSERT INTO notes(id, title, body, tags, created_at, updated_at) VALUES($1, $2, $3, $4, $5, $6) RETURNING id, title, body, tags, created_at, updated_at",
+      text: `INSERT INTO notes(id, title, body, tags, "createdAt", "updatedAt") VALUES($1, $2, $3, $4, $5, $6) RETURNING id, title, body, tags, "createdAt", "updatedAt"`,
       values: [id, title, body, tags, createdAt, updatedAt],
     };
     const result = await this.pool.query(query);
@@ -35,7 +35,7 @@ class NoteRepositories {
     const updatedAt = new Date().toISOString();
 
     const query = {
-      text: "UPDATE notes SET title = $1, body = $2, tags = $3, updated_at = $4 WHERE id = $5 RETURNING id",
+      text: 'UPDATE notes SET title = $1, body = $2, tags = $3, "updatedAt" = $4 WHERE id = $5 RETURNING id',
       values: [title, body, tags, updatedAt, id],
     };
 
