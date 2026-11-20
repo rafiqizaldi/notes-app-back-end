@@ -1,0 +1,13 @@
+# Dependensi
+node_modules/
+
+# File rahasia & kunci server
+*.pem
+.env
+.env.*
+!.env.example
+
+# Log & file sistem operasi
+npm-debug.log*
+.DS_Store
+Thumbs.db
