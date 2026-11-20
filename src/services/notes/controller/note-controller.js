@@ -1,4 +1,3 @@
-import { nanoid } from "nanoid";
 import NoteRepositories from "../repositories/note-repositories.js";
 import { InvariantError, NotFoundError } from "../../../exceptions/index.js";
 import response from "../../../utils/response.js";
@@ -20,7 +19,7 @@ export const createNote = async (req, res, next) => {
 
 export const getNotes = async (req, res) => {
   const notes = await NoteRepositories.getNotes();
-  return response(res, 200, "Catatan sukses ditampilkan", notes);
+  return response(res, 200, "Catatan sukses ditampilkan", { notes });
 };
 
 export const getNoteById = async (req, res, next) => {
