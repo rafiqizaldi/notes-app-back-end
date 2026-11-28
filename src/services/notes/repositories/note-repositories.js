@@ -33,7 +33,7 @@ class NoteRepositories {
     try {
       const notes = await this.cacheService.get(cacheKey);
       return JSON.parse(notes);
-    } catch (error) {
+    } catch {
       // Cache miss, get from database
       const query = {
         text: `SELECT notes.* FROM notes
